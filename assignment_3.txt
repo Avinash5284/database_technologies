@@ -1,0 +1,12 @@
+       
+
+                      ASSIGNMENT NO 3
+
+______________________________________________________________________
+
+
+   1. Does ANSI recognize the data type DATE?
+   -> YES, ANSI recognize the datatype date.
+
+   2.Which subdivision of SQL is used to insert values in table?
+   -> DATA MANIPULATION LANGUAGE (DML).
