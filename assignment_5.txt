@@ -1,0 +1,15 @@
+                ASSIGNMENT 5
+1.select * from orders where Amt > 1000;
+
+2.select sname,City from salespeople where City ='London' and comm > 0.10;
+
+3.select * from Customers where rating <= 100 or city = 'Rome';
+select * from orders where (Amt<1000 OR NOT(odate = '1990-10-03' AND cnum>2003));
+
+4.select * from orders where NOT((odate='1990-10-03' OR snum > 1006) AND amt>=1500);
+
+5.select * from salespeople;
+ 
+
+
+
