@@ -1,0 +1,22 @@
+use exercise;
+
+show tables;
+
+select * from SUPPLIER 
+  ORDER BY City desc;
+  
+select * from PARTS 
+  ORDER BY City,Pname;
+
+select * from SUPPLIER 
+  WHERE Status between '10' and '20';
+  
+select * from SUPPLIER 
+  WHERE Status not  between '10' and '15';
+  
+select Pname from parts where Pname like 'S%';
+
+select * from SUPPLIER where City like 'L%';
+
+
+select * from projects where city like '__n%';
