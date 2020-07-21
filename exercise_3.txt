@@ -1,0 +1,15 @@
+show databases;
+use exercise;
+
+
+select concat(upper(substr(sname,1,1)),lower(substr(Sname,2))) from supplier;
+
+select upper(sname) from supplier;
+select lower(sname) from supplier;
+select lpad(sname,25,' ') from supplier;
+select replace(sname,'S','ro') from supplier;
+select replace(replace(Sname,'O','o'),'S','r') from supplier;
+select Sname,length(Sname) from supplier;
+select* from supplier;
+
+
