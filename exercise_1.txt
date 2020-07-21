@@ -1,0 +1,155 @@
+create database exercise;
+show databases;
+use exercise;
+
+create table SEMP
+(
+  EMPNO CHAR(4),
+  ENAME CHAR(20),
+  BASIC FLOAT(9,2),
+  DEPTNO CHAR(2),
+  DEPTHEAD CHAR(4)
+  );
+  
+  DESC SEMP;
+  
+  create table SDEPT
+  (
+    DEPTNO CHAR(2),
+    DEPTNAME CHAR(15)
+  );
+  
+  DESC SDEPT;
+  
+  insert into SDEPT values
+  ('10','Development'),
+  ('20','Training');
+  
+  select * from sdept;
+  
+  insert into SEMP values
+  ('0001','SUNIL',6000,'10',null),
+  ('0002','HIREN',8000,'20',null),
+  ('0003','ALI',4000,'10','0001'),
+  ('0004','GEORGE',6000,NULL,'0002');
+  
+  SELECT * FROM SEMP;
+  
+  create table SUPPLIER
+  (
+   S int(4),
+   Sname varchar(20),
+   Status varchar(20),
+   City varchar(20)
+   );
+   
+   desc supplier;
+   
+   create table PARTS
+   (
+      P int(4),
+      Pname varchar(20),
+      Color varchar(10),
+      Weight float(5),
+      City varchar(10)
+	);
+      
+      create table PROJECTS
+      (
+       J int(4),
+       Jname varchar(20),
+       City varchar(10)
+       );
+       
+       desc PROJECTS;
+       
+       create table SUPPLIER_PARTS_PROJECT
+       (
+       S int(4),
+       P int(4),
+       J int(4),
+       Qty int(5)
+       );
+       
+       ALTER table SUPPLIER_PARTS_PROJECT RENAME column S TO `S#`;
+       ALTER table SUPPLIER_PARTS_PROJECT RENAME column P TO `P#`;
+       ALTER table SUPPLIER_PARTS_PROJECT RENAME column J TO `J#`;
+       
+       ALTER table SUPPLIER RENAME column S TO `S#`;
+       ALTER table PARTS RENAME column P TO `P#`;
+       ALTER table PROJECTS RENAME column J TO `J#`;
+       
+       insert into SUPPLIER
+       (`S#`,Sname,Status,City) values
+       (01,'S01','D','London'),
+       (02,'S02','ND','Mumbai'),
+       (03,'S03','D','Paris'),
+       (04,'S04','D','Pune'),
+       (05,'S05','ND','Athens');
+       
+       insert into PARTS
+       (`P#`,Pname,Color,Weight,City) values
+       (01,'P01','R',11,'Mumbai'),
+       (02,'P02','V',10,'Paris'),
+       (03,'P03','P',16,'Athens'),
+       (04,'P04','G',15,'London'),
+       (05,'P05','B',13,'Pune');
+       
+       insert into PROJECTS
+       (`J#`,Jname,City) values
+       (01,'J01','Paris'),
+       (02,'J02','London'),
+       (03,'J03','Pune'),
+       (04,'J04','Athens'),
+       (05,'J05','Paris');
+       
+       insert into SUPPLIER_PARTS_PROJECT
+       (`S#`,`P#`,`J#`,Qty) values
+       (01,03,04,40),
+       (02,02,04,20),
+       (01,05,03,30),
+       (04,03,02,50),
+       (05,02,03,10);
+       
+       UPDATE SUPPLIER SET Status = '20'
+       WHERE `S#` = 01;
+       
+        UPDATE SUPPLIER SET Status = '10'
+       WHERE `S#` = 02;
+       
+        UPDATE SUPPLIER SET Status = '50'
+       WHERE `S#` = 03;
+       
+        UPDATE SUPPLIER SET Status = '30'
+       WHERE `S#` = 04;
+       
+        UPDATE SUPPLIER SET Status = '40'
+       WHERE `S#` = 05;
+       
+       select * from supplier;
+       
+       select `S#`,Sname from supplier;
+       
+       select Pname,Color  from parts where city = 'London';
+       
+       select sname from supplier where city ='London';
+       
+       select sname from supplier where city ='Paris' or city='Athens';
+       
+       select * from projects where City = 'Athens';
+       
+       select Pname from parts where weight between  12 and 14;
+       
+       select * from supplier where status >= '20';
+       
+       select * from supplier where not city = 'London';
+       
+       select City from supplier;
+       
+       Select Weight,Weight*1000 as MILLIGRAMS,WEIGHT * (1/1000) as KILOGRAMS from parts; 
+       
+       
+       
+       
+      
+      
