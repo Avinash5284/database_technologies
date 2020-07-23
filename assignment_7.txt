@@ -1,0 +1,14 @@
+show databases;
+use assignment;
+show tables;
+select * from customers;
+select * from orders;
+select count(Odate) from ORDERS where Odate = '1990-10-03';
+
+select count(distinct(city)) from customers where city is not null;
+select min(Amt) "Smallest order",Cnum from ORDERS group by Cnum;
+
+select Cname from Customers where Cname like 'G%';
+
+select max(Rating) "Highest Rating",City from CUSTOMERS group by city;
+select  distinct count(Odate),Snum from orders group by odate order by Odate;
