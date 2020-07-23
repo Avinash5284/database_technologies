@@ -1,0 +1,11 @@
+show databases;
+use assignment;
+
+select Onum,Snum,Amt,Amt*(12/100) Commision from ORDERS;
+
+select city as "For the (city)",max(Rating) as "the highest rating is :" from CUSTOMERS group by city;
+
+select Rating,Cname,Cnum from CUSTOMERS order by rating desc;
+
+
+select count(Odate) from ORDERS group by Odate order by count(Odate) desc;
